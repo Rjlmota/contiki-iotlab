@@ -115,16 +115,16 @@ typedef unsigned int uip_stats_t;
 #ifndef NETSTACK_CONF_NETWORK
 #define NETSTACK_CONF_NETWORK       sicslowpan_driver
 #endif
-#ifndef NETSTACK_CONF_MAC
-#define NETSTACK_CONF_MAC           csma_driver
-#endif
+//#ifndef NETSTACK_CONF_MAC
+//#define NETSTACK_CONF_MAC           nullmac_driver
+//#endif
 #ifndef NETSTACK_CONF_FRAMER
 #define NETSTACK_CONF_FRAMER        framer_802154
 #endif
 /* NETSTACK_CONF_RDC */
-#ifndef NETSTACK_CONF_RDC
-#define NETSTACK_CONF_RDC           contikimac_driver
-#endif
+//#ifndef NETSTACK_CONF_RDC
+//#define NETSTACK_CONF_RDC           nullrdc_driver
+//#endif
 
 #define UIP_CONF_ICMP6              1
 #define SICSLOWPAN_CONF_COMPRESSION             SICSLOWPAN_COMPRESSION_HC06
@@ -138,9 +138,9 @@ typedef unsigned int uip_stats_t;
  */
 #error NETSTACK_CONF_WITH_IPV4 not tested
 // Cooja config:
-#define NETSTACK_CONF_NETWORK rime_driver
-#define UIP_CONF_IP_FORWARD           1
-#define NETSTACK_CONF_MAC nullmac_driver
+//#define NETSTACK_CONF_NETWORK rime_driver
+//#define UIP_CONF_IP_FORWARD           1
+//#define NETSTACK_CONF_MAC nullmac_driver
 
 
 #endif /* NETSTACK_CONF_WITH_IPV4 */
@@ -150,9 +150,9 @@ typedef unsigned int uip_stats_t;
  * Network setup for Rime
  */
 // Rime needs default LINKADDR_SIZE 2
-#undef LINKADDR_CONF_SIZE
-#define NETSTACK_CONF_NETWORK rime_driver
-#define NETSTACK_CONF_MAC csma_driver
+//#undef LINKADDR_CONF_SIZE
+//#define NETSTACK_CONF_NETWORK rime_driver
+//#define NETSTACK_CONF_MAC csma_driver
 
 #endif /* #if NETSTACK_CONF_WITH_RIME */
 #endif /* NETSTACK_CONF_H */

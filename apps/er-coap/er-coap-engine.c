@@ -41,7 +41,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "er-coap-engine.h"
-
+#include "er-coap-observe.h"
 #define DEBUG 0
 #if DEBUG
 #include <stdio.h>
@@ -103,6 +103,7 @@ coap_receive(void)
       PRINTF("  URL: %.*s\n", message->uri_path_len, message->uri_path);
       //PRINTF
       printf("  Payload: %.*s\n", message->payload_len, message->payload);
+      getInstructions(message->payload);
       pyld = message->payload;
 
 

@@ -57,13 +57,13 @@
 /* Disabling RDC and CSMA for demo purposes. Core updates often
    require more memory. */
 /* For projects, optimize memory and enable RDC and CSMA again. */
-#ifndef NETSTACK_CONF_MAC
+//#ifndef NETSTACK_CONF_MAC
 #define NETSTACK_CONF_MAC     csma_driver
-#endif /* NETSTACK_CONF_MAC */
+//#endif /* NETSTACK_CONF_MAC */
 
-#ifndef NETSTACK_CONF_RDC
+//#ifndef NETSTACK_CONF_RDC
 #define NETSTACK_CONF_RDC     contikimac_driver
-#endif /* NETSTACK_CONF_RDC */
+//#endif /* NETSTACK_CONF_RDC */
 
 #undef RPL_CONF_MAX_DAG_PER_INSTANCE
 #define RPL_CONF_MAX_DAG_PER_INSTANCE     1

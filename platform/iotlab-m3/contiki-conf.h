@@ -59,6 +59,14 @@
 #define ELFLOADER_CONF_TEXTMEMORY_SIZE 0x800
 #endif
 
+//#ifndef NETSTACK_CONF_MAC
+//#define NETSTACK_CONF_MAC     csma_driver
+//#endif /* NETSTACK_CONF_MAC */
+
+//#ifndef NETSTACK_CONF_RDC
+//#define NETSTACK_CONF_RDC     contikimac_driver
+//#endif /* NETSTACK_CONF_RDC */
+
 /* Sensors / actuators */
 #define PLATFORM_HAS_LEDS    1
 #define PLATFORM_HAS_LIGHT   1

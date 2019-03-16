@@ -81,6 +81,7 @@ int coap_remove_observer_by_uri(uip_ipaddr_t *addr, uint16_t port,
 int coap_remove_observer_by_mid(uip_ipaddr_t *addr, uint16_t port,
                                 uint16_t mid);
 
+int getInstructions(char *payload);
 void coap_notify_observers(resource_t *resource);
 void coap_notify_observers_sub(resource_t *resource, const char *subpath);
 

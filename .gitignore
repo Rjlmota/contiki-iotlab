@@ -21,6 +21,8 @@
 *.mbxxx
 *.win32
 *.apple2enh
+*.txt
+*.log
 *.atarixl
 *.c128
 *.c64

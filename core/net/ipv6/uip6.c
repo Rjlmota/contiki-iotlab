@@ -2324,11 +2324,11 @@ uip_process(uint8_t flag)
   float random = random_rand()/(float)(RANDOM_RAND_MAX);
   //printf("MENSAGEM %lu\n", (long unsigned)(random*100));
   if(good){
-    good = (random > 0.05) ? 1:0; // Sends the message and checks if it should go to the bad state.
+    good = (random > 0.15) ? 1:0; // Sends the message and checks if it should go to the bad state.
     //printf("MENSAGEM ENCAMINHADA!\n");
   }else{
     //printf("MENSAGEM DELETADA\n");
-    good = (random > (1-0.2)) ? 0:1; // Deletes the message and checks uf it should return to the good state. 
+    good = (random > (1-0.25)) ? 0:1; // Deletes the message and checks uf it should return to the good state. 
     goto drop;
     return;
   }

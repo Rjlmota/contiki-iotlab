@@ -139,7 +139,7 @@ PROCESS_THREAD(er_example_server, ev, data)
   double fixed_perc_energy = 0.2;// 0 - 1
   unsigned variation = 2;//0 - 99
 
-  //powertrace_start(CLOCK_SECOND * seconds, seconds, fixed_perc_energy, variation);
+  powertrace_start(CLOCK_SECOND * seconds, seconds, fixed_perc_energy, variation);
   event_trace_start(seconds_event, CLOCK_SECOND * seconds_event);
 
 
@@ -149,7 +149,7 @@ PROCESS_THREAD(er_example_server, ev, data)
    * WARNING: Activating twice only means alternate path, not two instances!
    * All static variables are the same for each URI path.
    */
-  rest_activate_resource(&res_hello, "test/hello");
+  //rest_activate_resource(&res_hello, "test/hello");
 /*  rest_activate_resource(&res_mirror, "debug/mirror"); */
 /*  rest_activate_resource(&res_chunks, "test/chunks"); */
 /*  rest_activate_resource(&res_separate, "test/separate"); */

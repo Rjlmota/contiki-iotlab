@@ -59,10 +59,12 @@ LIST(observers_list);
 //RENATO ATTEMPT TO MAKE CONTIKI READ THE INSTRUCTIONS SENT BY CALIFORNIUM
 
 
-int frequency = 5;
-int conInterval = COAP_OBSERVING_REFRESH_INTERVAL;
+// int frequency = 5;
+// int conInterval = COAP_OBSERVING_REFRESH_INTERVAL;
+// int remove_node = 0;
+int frequency = 100;
+int conInterval = 1;
 int remove_node = 0;
-
 
 double modulus(double a, double b)
 {
@@ -73,6 +75,7 @@ return a - (double)( result ) * b;
 
 
 int getInstructions(char *payload){
+  /*
   printf("PAYLOAD -> %s\n", payload);
   printf("Extracting Instructions\n");
 	if(remove_node){
@@ -110,6 +113,7 @@ if(payload != NULL){
  
  }
 return 0;
+*/
 }
 
 
@@ -314,12 +318,11 @@ coap_notify_observers_sub(resource_t *resource, const char *subpath)
         }
       //}
 
-       /* 
         if(getInstructions(get_payload())){
           coap_remove_observer(obs); // Commented for testing.
           node_removed = 1;  
           printf("Removed node\n");
-      }*/
+      }
 
         PRINTF("           Observer ");
         PRINT6ADDR(&obs->addr);

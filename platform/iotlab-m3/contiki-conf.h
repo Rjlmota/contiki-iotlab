@@ -59,14 +59,50 @@
 #define ELFLOADER_CONF_TEXTMEMORY_SIZE 0x800
 #endif
 
-//#ifndef NETSTACK_CONF_MAC
-//#define NETSTACK_CONF_MAC     csma_driver
-//#endif /* NETSTACK_CONF_MAC */
+//#include "platform-conf.h"
 
-//#ifndef NETSTACK_CONF_RDC
-//#define NETSTACK_CONF_RDC     contikimac_driver
-//#endif /* NETSTACK_CONF_RDC */
+#ifndef NETSTACK_CONF_MAC
+#define NETSTACK_CONF_MAC     csma_driver
+#endif /* NETSTACK_CONF_MAC */
 
+#ifndef NETSTACK_CONF_RDC
+#define NETSTACK_CONF_RDC     contikimac_driver
+#endif /* NETSTACK_CONF_RDC */
+
+#ifndef NETSTACK_CONF_RDC_CHANNEL_CHECK_RATE
+#define NETSTACK_CONF_RDC_CHANNEL_CHECK_RATE 8
+#endif /* NETSTACK_CONF_RDC_CHANNEL_CHECK_RATE */
+
+#ifndef NETSTACK_CONF_RADIO
+#define NETSTACK_CONF_RADIO   cc2520_driver
+#endif /* NETSTACK_CONF_RADIO */
+
+#ifndef NETSTACK_CONF_FRAMER
+#define NETSTACK_CONF_FRAMER  framer_802154
+#endif /* NETSTACK_CONF_FRAMER */
+
+#ifndef CC2520_CONF_AUTOACK
+#define CC2520_CONF_AUTOACK              1
+#endif /* CC2520_CONF_AUTOACK */
+
+#define NULLRDC_CONF_802154_AUTOACK      1
+
+#if NETSTACK_CONF_WITH_IPV6
+/* Network setup for IPv6 */
+#define NETSTACK_CONF_NETWORK sicslowpan_driver
+
+/* Specify a minimum packet size for 6lowpan compression to be
+   enabled. This is needed for ContikiMAC, which needs packets to be
+   larger than a specified size, if no ContikiMAC header should be
+   used. */
+#define SICSLOWPAN_CONF_COMPRESSION_THRESHOLD 63
+
+#define CXMAC_CONF_ANNOUNCEMENTS         0
+#define XMAC_CONF_ANNOUNCEMENTS          0
+
+#ifndef QUEUEBUF_CONF_NUM
+#define QUEUEBUF_CONF_NUM                8
+#endif
 /* Sensors / actuators */
 #define PLATFORM_HAS_LEDS    1
 #define PLATFORM_HAS_LIGHT   1

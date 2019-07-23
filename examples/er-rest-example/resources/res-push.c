@@ -83,6 +83,8 @@ res_periodic_handler()
   ++event_counter;
   /* Usually a condition is defined under with subscribers are notified, e.g., large enough delta in sensor reading. */
   if(get_event()) {
+
+    
     printf("Notifying subs\n");
     /* Notify the registered observers which will trigger the res_get_handler to create the response. */
     REST.notify_subscribers(&res_push);
